@@ -1,5 +1,27 @@
-extends layout
+html
+    head
+        title The Image Seeker
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel='stylesheet', href='/style.css')
+        link(href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lato", rel="stylesheet", type='text/css')
 
-block content
-  h1= title
-  p Welcome to #{title}
+    div.container
+        h1.heading The File Feeler
+        div.box
+            h2.heading Description
+            div.text-block
+                p.text This service provides analyses a file for metadata (information detailing and describing the file).
+                
+            h2.heading Using the service.
+            div.text-block
+                p.text In the form above, hit browse and select a file you'd like to be analysed, and then hit submit!
+                
+            h2.heading Example Response
+            div.text-block
+                p.code [{ "name": "myPetHermitCrab.png", "size": 227393 }]
+            
+                
+    script(src="https://code.jquery.com/jquery-2.2.1.min.js", integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=", crossorigin="anonymous")
+    script(src='/client.js')

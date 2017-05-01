@@ -1,17 +1,29 @@
 {
   "name": "file-metadata-service",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This service provides analyses a file for metadata (information detailing and describing the file). The user will browse and select a file on their computer to be analysed.",
+  "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllanPooley/fcc-file-metadata-service.git"
+  },
+  "keywords": [
+    "node",
+    "file",
+    "metadata"
+  ],
+  "author": "Allan Pooley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AllanPooley/fcc-file-metadata-service/issues"
+  },
+  "homepage": "https://github.com/AllanPooley/fcc-file-metadata-service#readme",
   "dependencies": {
-    "body-parser": "~1.17.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2"
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-beta.12"
   }
 }
