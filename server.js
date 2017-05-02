@@ -15,9 +15,6 @@ app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-
-
-
 app.get('/favicon.ico', function(req, res) {
     res.sendFile(path.join(__dirname, 'favicon.ico'));
 });
@@ -31,7 +28,7 @@ app.get('/', function(req, res) {
 
 app.post('/feel', upload.any(), function(req, res) {
     
-    if (req.files) {
+    if (req.files.length > 0) {
         
         var fileMetadata = [];
         
@@ -43,14 +40,13 @@ app.post('/feel', upload.any(), function(req, res) {
                 file_extension: req.files[i].originalname.split('.').pop()
             }
             
-            fileMetadata.push(resObj)
-            
+            fileMetadata.push(resObj);
         }
         
         res.send(fileMetadata);
         
     } else {
-        res.send({ 'error' : 'No files submitted for feelin!'})
+        res.send({ 'error' : "No files submitted for feelin! You're really messing with my zen thing, man."})
     }
 });
 

@@ -40,15 +40,27 @@ h2 {
   margin: 50px 0px;
 }
 
-.box {
+.box-column, .box-row {
   display: flex;
-  flex-flow: column;
   padding: 30px;
   border: 1px solid black;
   border-radius: 10px;
   margin: 10px;
   width: 600px;
 }
+
+
+.box-column {
+  flex-direction: column;
+}
+
+
+.box-row {
+  flex-direction: row;
+  justify-content: center;
+}
+
+
 
 .text-block {
   width: 100%;
@@ -80,7 +92,7 @@ h2 {
   font-size: 1.25em;
   font-weight: 700;
   padding: 10px 20px;
-  margin: 50px 0 0 0;
+  margin: 10px;
   border-radius: 2px;
   transition: .3s;
 }

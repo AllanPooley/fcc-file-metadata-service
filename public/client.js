@@ -1,7 +1,7 @@
 var $fileInput = $('.file-input')
 var $fileUploadLabel = $('.file-label');
 
-// Changes the label to the file name when 
+// Changes the label text 
 $fileInput.on('change', function() {
     
     var fileName = '';

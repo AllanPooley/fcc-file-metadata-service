@@ -10,25 +10,33 @@ html
     div.container
         h1.heading The File Feeler
         
-        div.box
-            form(action='feel', enctype='multipart/form-data', method='post')
-                input(type="file" name="file" id="file" class="file-input")
-                label(for="file" class="file-label") Choose a file
+        form(action='feel', enctype='multipart/form-data', method='post')
+            div.box-row
+                input(type="file" name="file" id="file" class="file-input" multiple="multiple" data-multiple-caption="{count} files selected")
+                label(for="file" class="file-label") Choose one or more files
                 input(type="submit" value="Feel it!" class="file-submit")
                 
         
-        div.box
+        div.box-column
             h2.heading Description
             div.text-block
-                p.text This service provides analyses a file for metadata (information detailing and describing the file).
+                p.text 
+                    | This service analyses (or 'feels') one or more files for metadata.
+                    | Metadata can be thought of as information describing information.
+                    |
+                    | If you were compressed into digital form (It's bio-digital jazz, man), metadata about you might describe the exact moment you were born, how much you weigh, your favourite place to go bowling!
                 
             h2.heading Using the service.
             div.text-block
-                p.text In the form above, hit browse and select a file you'd like to be analysed, and then hit submit!
+                p.text In the form above, give me one or more files you'd like to be analysed, and then hit submit!
                 
             h2.heading Example Response
             div.text-block
-                p.code [{ "name": "myPetHermitCrab.png", "size": 227393 }]
+                p.code 
+                 | [{ file_name: "myPetHermitCrab_HI-RES.png", 
+                 | file_size_bytes: 2444779, 
+                 | file_extension: "png"}]
+
             
                 
     script(src="https://code.jquery.com/jquery-2.2.1.min.js", integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=", crossorigin="anonymous")
