@@ -1,10 +1,10 @@
 
-var express = require('express');
-var app = express();
-var path = require('path');
-var bodyParser = require('body-parser');
-var multer  = require('multer');
-var upload = multer(); // Opts: { dest: 'uploads/' }
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
+const multer  = require('multer');
+const upload = multer(); // Opts: { dest: 'uploads/' }
 
 
 const PORT = 8080;
@@ -27,6 +27,9 @@ app.get('/', function(req, res) {
 });
 
 app.post('/feel', upload.any(), function(req, res) {
+    
+    // Loop through all files delivered in request and prepare a metadata
+    // response for each.
     
     if (req.files.length > 0) {
         

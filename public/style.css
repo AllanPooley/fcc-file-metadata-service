@@ -78,6 +78,7 @@ h2 {
 
 .file-input {
   /* Hiding the ugly form input, to be replaced by pretty label */
+	display: flex;
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -87,10 +88,10 @@ h2 {
 }
 
 .file-label, .file-submit {
+  display: flex;
   font-family: 'Lato', sans-serif; 
   cursor: pointer;
   font-size: 1.25em;
-  font-weight: 700;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 2px;
@@ -104,28 +105,33 @@ h2 {
 }
 
 .file-label {
+  position: relative;
   color: black;
   border: 2px solid black;
   background-color: transparent;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.file-label: hover {
+.file-label-ready {
+  background-color: #1E824C;
+}
+
+.file-label:hover {
   color: white;
   border-color: inherit;
 }
 
 .file-submit {
-  color: black;
+  color: white;
   border: 2px solid black;
-  background-color: white;
+  background-color: #2574A9; /* Jelly Bean Blue */
 }
 
-.file-submit: hover {
-  color: black;
+.file-submit:hover {
+  color: white;
   border: 2px solid black;
-  background-color: white;
+  background-color: #1E8BC3; /* Summer Sky Blue */
 }
-
-
-
-

@@ -8,7 +8,7 @@ Go to https://file-feeler.glitch.me, hit browse and select a file you'd like to 
 
 ## Expected Outputs
 
-`[{ "name": "myPetHermitCrab.png", "size": 227393 }]`
+`[ { file_name: "myPetHermitCrab_HI-RES.png", file_size_bytes: 2444779, file_extension: "png"} ]`
 
 
 ## Motivation
