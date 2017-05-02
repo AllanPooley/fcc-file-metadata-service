@@ -1,6 +1,6 @@
 html
     head
-        title The Image Seeker
+        title The File Feeler
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1")
@@ -9,6 +9,16 @@ html
 
     div.container
         h1.heading The File Feeler
+        
+        div.box
+            form(method='POST' action='/upload')
+                input(type="file" name="file" id="file" class="file-input")
+                label(for="file" class="file-label") Choose a file
+                input(type="submit" value="Feel" class="file-submit")
+                // File
+                // Browse // Submit
+                
+        
         div.box
             h2.heading Description
             div.text-block
