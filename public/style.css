@@ -71,7 +71,7 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
-  .box  {
+  .box-column, .box-row  {
     width: calc(100vw - 91px);
   }
 }
