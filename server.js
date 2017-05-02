@@ -3,6 +3,8 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+var multer  = require('multer');
+var upload = multer(); // Opts: { dest: 'uploads/' }
 
 
 const PORT = 8080;
@@ -27,8 +29,29 @@ app.get('/', function(req, res) {
   
 });
 
-app.post('/feel', function(req, res) {
+app.post('/feel', upload.any(), function(req, res) {
     
+    if (req.files) {
+        
+        var fileMetadata = [];
+        
+        for (var i = 0; i < req.files.length; i++){
+            
+            var resObj = {
+                file_name: req.files[i].originalname,
+                file_size_bytes: req.files[i].size,
+                file_extension: req.files[i].originalname.split('.').pop()
+            }
+            
+            fileMetadata.push(resObj)
+            
+        }
+        
+        res.send(fileMetadata);
+        
+    } else {
+        res.send({ 'error' : 'No files submitted for feelin!'})
+    }
 });
 
 app.listen(PORT, function (){
